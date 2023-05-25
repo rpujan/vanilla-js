@@ -1,4 +1,4 @@
-[
+const names = [
   {
     "guid": "494ca406-1dd2-4d30-9de2-c76b82829610",
     "firstName": "England",
@@ -349,4 +349,8 @@
     "gender": "male",
     "age": 33
   }
-]
+];
+
+export function getUsers() {
+  return names;
+}

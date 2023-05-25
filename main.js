@@ -1,6 +1,7 @@
 import { getJsonData } from './1-basic-fetch.js';
 import { getUsers } from './data/users.js';
 import { getEmployees } from './data/employees.js'
+import { getUsers as userNames } from './data/names.js'
 // import user from './data/employees.json';
 const url = 'https://restcountries.com/v3.1/all';
 const url2 = 'https://api.publicapis.org/entries';
@@ -17,6 +18,7 @@ const url2 = 'https://api.publicapis.org/entries';
 // let a = _.uniqBy(data, "favoriteFruit")
 // console.log(a);
 
-const data = getEmployees();
+const data = getUsers();
 
-console.log(data);
+let output = _.filter(data, ["eyeColor", "blue"]);
+console.log(output);
