@@ -1,4 +1,4 @@
-[
+const employees = [
   {
     "_id": "646f3ad3ce49c74123b5bfe1",
     "index": 0,
@@ -4499,4 +4499,8 @@
     "greeting": "Hello, Georgette Raymond! You have 3 unread messages.",
     "favoriteFruit": "apple"
   }
-]
+];
+
+export function getEmployees() {
+  return employees;
+}

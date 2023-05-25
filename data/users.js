@@ -1,4 +1,4 @@
-[
+const users = [
   {
     "_id": "645e182d89e31df3ef985d0d",
     "index": 0,
@@ -899,4 +899,8 @@
     "greeting": "Hello, Good Sanders! You have 6 unread messages.",
     "favoriteFruit": "banana"
   }
-]
+];
+
+export function getUsers() {
+  return users;
+}
