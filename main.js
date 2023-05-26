@@ -47,12 +47,14 @@ let g = _.map(data, (val,key) => {
     //console.log(val.name.common)
     obj["name"] = val.name.common;
     obj["continents"] = val.continents;
-    obj["flags"] = val.flags;
+    // obj["flags"] = val.flags;
     obj["region"] = val.region;
     obj["subregion"] = val.subregion;
-    obj["population"] = val.population;
+    obj["population"] = Intl.NumberFormat("en",{notation: "compact"}).format(val.population);
+    obj["population2"] = val.population;
     obj["landlocked"] = val.landlocked;
     arr.push(obj)
+    obj = {};
 })
 
 console.log(arr);
