@@ -41,4 +41,18 @@ let e = _.groupBy(d, 'continents');
 
 let f = Object.keys(e);
 
-console.log(f);
+let obj = {};
+let arr = [];
+let g = _.map(data, (val,key) => {
+    //console.log(val.name.common)
+    obj["name"] = val.name.common;
+    obj["continents"] = val.continents;
+    obj["flags"] = val.flags;
+    obj["region"] = val.region;
+    obj["subregion"] = val.subregion;
+    obj["population"] = val.population;
+    obj["landlocked"] = val.landlocked;
+    arr.push(obj)
+})
+
+console.log(arr);
