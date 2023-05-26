@@ -21,5 +21,24 @@ const url2 = 'https://api.publicapis.org/entries';
 
 const data = getCountries();
 
-let output = _.filter(data, ["name.common", "India"]);
-console.log(output);
+// pick name and borders
+let a = _.map(data, i => _.pick(i, 'name.common', 'borders'));
+
+// landlocked countries
+let b = _.filter(data, ['landlocked', true]);
+
+// landlocked countries group ny continents
+let c = _.groupBy(_.filter(data, ['landlocked', true]), 'continents');
+
+// Countris without shared border
+let d = _.map(data, (val, key) => {
+    if(!_.has(val, 'borders')) {
+        return val       
+    }
+});
+
+let e = _.groupBy(d, 'continents');
+
+let f = Object.keys(e);
+
+console.log(f);
